@@ -5,14 +5,17 @@ body{
     overflow-x:hidden;
 }
 
-
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
   
 #inner-body{
     margin-left: 100px;
     margin-right: 100px;
     border: 2px solid red;
 }
-/* js */
+
 
 #mydiv{
     height: 100vh;
@@ -113,8 +116,7 @@ body{
     
 }
 
-.nigga2{
-    /* border: 2px solid green; */
+.contact-form{
     background-color: rgb(83, 236, 98);
     border-radius: 25px;
     padding: 2px;
@@ -126,13 +128,13 @@ body{
     align-items: center;
     cursor: pointer;
 }
-.nigga2 img{
+.contact-form img{
    
     height: 16px;
     margin: 4px;
     margin-right: 9px;
 }
-.nigga2 button{
+.contact-form button{
     background-color: rgb(83, 236, 98);
     color: white;
     border-radius: none;

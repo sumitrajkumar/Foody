@@ -21,8 +21,7 @@ body{
     
 }
 
-.nigga2{
-    /* border: 2px solid green; */
+.search{
     background-color: rgb(83, 236, 98);
     border-radius: 25px;
     padding: 2px;
@@ -34,13 +33,13 @@ body{
     align-items: center;
     cursor: pointer;
 }
-.nigga2 img{
+.search img{
    
     height: 16px;
     margin: 4px;
     margin-right: 9px;
 }
-.nigga2 button{
+.search button{
     background-color: rgb(83, 236, 98);
     color: white;
     border-radius: none;
@@ -72,19 +71,17 @@ body{
 /*              //! cart             */
 
 #first-image{
-    background-image: url(images/final.jpg);
-    padding: 15vw;
-    min-height: 250px;
-    background-position:top;
-    background-attachment: fixed;
-    background-size: contain;
-    background-repeat: no-repeat;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 40px;
 }
 
 
 #newnav{
     display: flex;
-    align-items:flex-end;
+    align-items:center;
+    justify-content: center;
     flex-direction: column;
     min-height: 40vh;
     width: 100vw;
@@ -288,4 +285,12 @@ body{
 }
 #icon1{
     background-color:rgb(83, 236, 98) ;
+}
+#emptydiv{
+   
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    font-size: 40px;
 }

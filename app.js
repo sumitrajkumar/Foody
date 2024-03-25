@@ -44,7 +44,8 @@ button.addEventListener('click', () => {
     let div3 = document.createElement("div");
     div3.setAttribute("id", "mydiv3");
     //! inside div2 make two div 
-    let check = document.createElement("button");
+    let check = document.createElement("input");
+    check.type = 'checkbox';
     check.setAttribute("id", "check");
 
     let terms = document.createElement("div");
@@ -103,13 +104,11 @@ document.querySelectorAll('.add-to-cart').forEach(function (element) {
 
         var paragraphElement = previousSibling.querySelector('p');
 
-        //! kam ka
+        
         var paragraphContent = paragraphElement.textContent;
 
 
-        console.log("Paragraph Content:", paragraphContent);
-
-        //! kam ka
+       
         var nextSibling = paragraphElement.nextElementSibling.nextElementSibling;
 
         console.log(nextSibling.textContent);
@@ -123,7 +122,7 @@ document.querySelectorAll('.add-to-cart').forEach(function (element) {
 
         //! for cart items
 
-        localStorage.setItem(name,price);
+        localStorage.setItem(name,price,s);
 
 
         
@@ -131,7 +130,7 @@ document.querySelectorAll('.add-to-cart').forEach(function (element) {
     });
 })
 window.onload = function() {
-    // Clear the content of product and unit divs
+    //! Clear the content of product and unit divs
    localStorage.clear();
 };
 

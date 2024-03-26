@@ -200,5 +200,34 @@
 #icon1{
     background-color:rgb(83, 236, 98) ;
 }
-
-
+#finalCartDiv{
+    background-color: rgb(83, 236, 98) ;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+#cartOneDisplay{
+    margin-bottom: 3px;
+}
+#cartTwoDisplay{
+    font-size: 24px;
+    margin: auto;
+}
+#mainCartDiv{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+#cancel{
+    padding: 10px;
+    cursor: pointer;
+}

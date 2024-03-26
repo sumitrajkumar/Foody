@@ -104,11 +104,11 @@ document.querySelectorAll('.add-to-cart').forEach(function (element) {
 
         var paragraphElement = previousSibling.querySelector('p');
 
-        
+
         var paragraphContent = paragraphElement.textContent;
 
 
-       
+
         var nextSibling = paragraphElement.nextElementSibling.nextElementSibling;
 
         console.log(nextSibling.textContent);
@@ -117,20 +117,79 @@ document.querySelectorAll('.add-to-cart').forEach(function (element) {
         console.log(s);
 
         let name = paragraphContent;
-        let price=  nextSibling.textContent;
+        let price = nextSibling.textContent;
 
 
         //! for cart items
 
-        localStorage.setItem(name,price,s);
+        localStorage.setItem(name, price, s);
 
 
-        
+
 
     });
 })
-window.onload = function() {
+window.onload = function () {
     //! Clear the content of product and unit divs
-   localStorage.clear();
+    localStorage.clear();
 };
+
+const addToCartButtons = document.getElementsByClassName("add-to-cart");
+let cnt = 0;
+const finalCartDivs = [];
+Array.from(addToCartButtons).forEach(button => {
+    button.addEventListener("click", () => {
+        cnt++;
+
+
+        const finalCartDiv = document.createElement("div");
+        finalCartDiv.setAttribute("id", "finalCartDiv");
+
+        const mainCartDiv = document.createElement("div");
+        mainCartDiv.setAttribute("id", "mainCartDiv");
+
+
+        const cartTextOneDisplay = document.createElement("p");
+        cartTextOneDisplay.textContent = "Congratulation! Your delivery is free";
+        cartTextOneDisplay.setAttribute("id", "cartOneDisplay");
+
+
+        const cartTextTwoDisplay = document.createElement("p");
+        cartTextTwoDisplay.textContent = cnt + " items added";
+        cartTextTwoDisplay.setAttribute("id", "cartTwoDisplay");
+
+        let cancel = document.createElement("div");
+        cancel.setAttribute("id", "cancel");
+        cancel.setAttribute("class", "cancelButton");
+        cancel.textContent = "X";
+
+        cancel.addEventListener('click', () => {
+            finalCartDivs.forEach(div => {
+                div.remove();
+            });
+        });
+
+        finalCartDiv.addEventListener('click', (e) => {
+            if(e.target == cancel)
+            {
+                return ;
+            }
+            window.location.href = "cart.html";
+        });
+
+        mainCartDiv.appendChild(cartTextTwoDisplay);
+        mainCartDiv.appendChild(cartTextOneDisplay);
+
+        finalCartDiv.appendChild(mainCartDiv);
+        finalCartDiv.appendChild(cancel);
+
+        finalCartDivs.push(finalCartDiv);
+
+        document.body.appendChild(finalCartDiv);
+
+
+
+    });
+});
+
 
